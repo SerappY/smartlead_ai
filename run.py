@@ -1,9 +1,10 @@
-from flask import Flask
-app = Flask(__name__)
+from app import create_app
 
-@app.route('/')
-def merhaba():
-  return 'Ortam calisiyor!'
 
-if __name__ == '__main__':
-  app.run(port=5000)
+# Flask uygulamasını uygulama fabrikasından oluşturur
+app = create_app()
+
+
+if __name__ == "__main__":
+    # Yerel geliştirme ortamında uygulamayı çalıştırır
+    app.run(port=5000)
